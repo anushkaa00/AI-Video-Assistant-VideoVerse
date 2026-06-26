@@ -1,0 +1,54 @@
+streamlit==1.46.1
+
+# LangChain
+langchain==0.3.26
+langchain-core==0.3.68
+langchain-community==0.3.27
+langchain-text-splitters==0.3.8
+langchain-mistralai==0.2.11
+langchain-chroma==0.2.4
+
+# Vector DB
+chromadb==1.0.15
+
+# Embeddings
+sentence-transformers==5.0.0
+
+# LLM
+mistralai==1.9.3
+
+# Audio & Video Processing
+openai-whisper==20250625
+ffmpeg-python==0.2.0
+yt-dlp==2025.7.21
+pydub==0.25.1
+
+# Document Processing
+pypdf==5.8.0
+
+# Utilities
+python-dotenv==1.1.1
+tiktoken==0.9.0
+numpy==2.3.1
+pandas==2.3.1
+
+# PyTorch
+torch==2.7.1
+torchaudio==2.7.1
+
+# YouTube Transcript Support
+youtube-transcript-api==1.2.2
+
+# Translation
+deep-translator==1.11.4
+
+# NLP
+nltk==3.9.1
+
+# Misc
+requests==2.32.4
+tqdm==4.67.1
+
+# PDF Export
+reportlab==4.4.2
+fpdf2==2.8.3
