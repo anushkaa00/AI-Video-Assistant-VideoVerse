@@ -4,244 +4,116 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-36 pb-24">
+    <section className="relative overflow-hidden bg-[#050816] pt-44 pb-32">
+
       {/* Background */}
 
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-20 top-0 h-96 w-96 rounded-full bg-indigo-600/20 blur-[150px]" />
+      <div className="absolute inset-0 -z-10">
 
-        <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-500/15 blur-[170px]" />
+        {/* Top Glow */}
+
+        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-violet-600/10 blur-[170px]" />
+
+        {/* Left */}
+
+        <div className="absolute -left-40 top-40 h-[420px] w-[420px] rounded-full bg-violet-600/10 blur-[150px]" />
+
+        {/* Right */}
+
+        <div className="absolute -right-40 top-24 h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[150px]" />
+
+        {/* Bottom */}
+
+        <div className="absolute bottom-0 left-1/2 h-[250px] w-[800px] -translate-x-1/2 bg-gradient-to-r from-violet-500/5 via-cyan-500/10 to-violet-500/5 blur-[120px]" />
+
       </div>
 
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-5xl px-6 text-center">
 
-        <div className="grid items-center gap-20 lg:grid-cols-2">
+        {/* Badge */}
 
-          {/* LEFT */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#12172b]/70 px-6 py-3 backdrop-blur-3xl shadow-[0_0_35px_rgba(124,58,237,.15)]"
+        >
+          <Sparkles
+            size={17}
+            className="text-violet-400"
+          />
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: .6 }}
+          <span className="text-slate-200">
+            AI Powered Video Intelligence
+          </span>
+
+        </motion.div>
+
+        {/* Heading */}
+
+        <motion.h1
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: .15 }}
+          className="mt-10 text-6xl font-black leading-tight text-white lg:text-7xl"
+        >
+          Analyze{" "}
+
+          <span className="bg-gradient-to-r from-violet-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+
+            Videos
+
+          </span>
+
+          <br />
+
+          in Seconds.
+
+        </motion.h1>
+
+        {/* Subtitle */}
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: .3 }}
+          className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-400"
+        >
+          Upload any video and let VideoVerse automatically generate
+          transcripts, summaries, timestamps, highlights and an AI
+          chat assistant.
+        </motion.p>
+
+        {/* Buttons */}
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: .45 }}
+          className="mt-14 flex justify-center gap-6"
+        >
+
+          <Link
+            to="/dashboard"
+            className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400 px-9 py-4 text-lg font-semibold text-white shadow-[0_10px_35px_rgba(56,189,248,.25)] transition-all duration-300 hover:scale-105"
           >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-cyan-300">
-              <Sparkles size={16} />
+            Get Started
 
-              AI Powered Video Intelligence
-            </div>
+            <ArrowRight size={20} />
+          </Link>
 
-            <h1 className="text-6xl font-black leading-tight text-white lg:text-7xl">
-              Analyze
-              <span className="block bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Videos
-              </span>
-
-              in Seconds.
-            </h1>
-
-            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-400">
-              Upload any video and let VideoVerse automatically generate
-              transcripts, summaries, timestamps, highlights and an AI chat
-              assistant.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-5">
-
-              <Link
-                to="/dashboard"
-                className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 px-8 py-4 font-semibold text-white transition hover:scale-105"
-              >
-                Get Started
-
-                <ArrowRight size={18}/>
-              </Link>
-
-              <button className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-8 py-4 text-white transition hover:bg-white/10">
-
-                <PlayCircle size={20}/>
-
-                Watch Demo
-
-              </button>
-
-            </div>
-
-            <div className="mt-14 flex gap-12">
-
-              <div>
-
-                <h2 className="text-4xl font-black text-white">
-                  10x
-                </h2>
-
-                <p className="text-slate-400">
-                  Faster Analysis
-                </p>
-
-              </div>
-
-              <div>
-
-                <h2 className="text-4xl font-black text-white">
-                  AI
-                </h2>
-
-                <p className="text-slate-400">
-                  Powered
-                </p>
-
-              </div>
-
-              <div>
-
-                <h2 className="text-4xl font-black text-white">
-                  24/7
-                </h2>
-
-                <p className="text-slate-400">
-                  Available
-                </p>
-
-              </div>
-
-            </div>
-
-          </motion.div>
-
-          {/* RIGHT */}
-
-          <motion.div
-            initial={{
-              opacity:0,
-              x:50
-            }}
-            animate={{
-              opacity:1,
-              x:0
-            }}
-            transition={{
-              duration:.7
-            }}
+          <button
+            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#13172d]/80 px-9 py-4 text-lg font-semibold text-white backdrop-blur-3xl transition-all duration-300 hover:bg-white/10"
           >
+            <PlayCircle size={21} />
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-3xl">
+            Watch Demo
 
-              <div className="mb-6 flex gap-2">
+          </button>
 
-                <div className="h-3 w-3 rounded-full bg-red-400"/>
-
-                <div className="h-3 w-3 rounded-full bg-yellow-400"/>
-
-                <div className="h-3 w-3 rounded-full bg-green-400"/>
-
-              </div>
-
-              <div className="rounded-2xl bg-[#0d1227] p-6">
-
-                <div className="mb-6 flex items-center justify-between">
-
-                  <h3 className="font-bold text-white">
-                    Video Analysis
-                  </h3>
-
-                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">
-                    Processing
-                  </span>
-
-                </div>
-
-                <div className="space-y-5">
-
-                  <div>
-
-                    <div className="mb-2 flex justify-between">
-
-                      <span className="text-slate-400">
-                        Transcript
-                      </span>
-
-                      <span className="text-cyan-400">
-                        100%
-                      </span>
-
-                    </div>
-
-                    <div className="h-2 rounded-full bg-slate-700">
-
-                      <div className="h-full w-full rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500"/>
-
-                    </div>
-
-                  </div>
-
-                  <div>
-
-                    <div className="mb-2 flex justify-between">
-
-                      <span className="text-slate-400">
-                        Summary
-                      </span>
-
-                      <span className="text-cyan-400">
-                        Ready
-                      </span>
-
-                    </div>
-
-                    <div className="h-2 rounded-full bg-slate-700">
-
-                      <div className="h-full w-full rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500"/>
-
-                    </div>
-
-                  </div>
-
-                  <div>
-
-                    <div className="mb-2 flex justify-between">
-
-                      <span className="text-slate-400">
-                        AI Chat
-                      </span>
-
-                      <span className="text-cyan-400">
-                        Active
-                      </span>
-
-                    </div>
-
-                    <div className="h-2 rounded-full bg-slate-700">
-
-                      <div className="h-full w-full rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500"/>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div className="mt-8 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 p-5">
-
-                  <p className="font-semibold text-white">
-                    AI Summary
-                  </p>
-
-                  <p className="mt-3 leading-7 text-slate-300">
-                    This video discusses project milestones, upcoming tasks,
-                    deadlines and important action items identified using AI.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </motion.div>
-
-        </div>
+        </motion.div>
 
       </div>
+
     </section>
   );
 }
