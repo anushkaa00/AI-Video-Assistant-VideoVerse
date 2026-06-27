@@ -4,11 +4,14 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
+import MeetingProvider from "./context/MeetingContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <MeetingProvider>
+        <App />
+      </MeetingProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

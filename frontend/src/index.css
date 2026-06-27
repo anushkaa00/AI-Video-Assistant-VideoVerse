@@ -1,37 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap");
-
 @import "tailwindcss";
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Sora",sans-serif;
-}
 
 html{
   scroll-behavior:smooth;
 }
 
 body{
+  margin:0;
   background:#050816;
   color:white;
   overflow-x:hidden;
+  font-family:Inter,sans-serif;
+}
+
+*{
+  box-sizing:border-box;
 }
 
 button{
   cursor:pointer;
-}
-
-input{
-  outline:none;
-}
-
-::-webkit-scrollbar{
-  width:7px;
-}
-
-::-webkit-scrollbar-thumb{
-  background:#6d5efc;
-  border-radius:100px;
 }

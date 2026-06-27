@@ -1,35 +1,32 @@
-import Badge from "../assets/components/common/Badge";
-import Button from "../assets/components/common/Button";
-import GlassCard from "../assets/components/common/GlassCard";
-import SectionHeading from "../assets/components/common/SectionHeading";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Stats from "../components/Stats";
+import MeetingCard from "../components/MeetingCard";
+import ResultsCard from "../components/ResultsCard";
+import Features from "../components/Features";
+import About from "../components/About";
+import Footer from "../components/Footer";
 
-export default function Home() {
+function Home() {
   return (
-    <main className="min-h-screen bg-[#050816] p-10">
+    <main className="min-h-screen bg-[#050816]">
+      <Navbar />
 
-      <Badge>🚀 VideoVerse AI</Badge>
+      <Hero />
 
-      <div className="mt-8">
+      <Stats />
 
-        <SectionHeading
-          title="Understand Any YouTube Video with AI"
-          subtitle="Generate transcripts, summaries and chat with any video in seconds."
-        />
+      <MeetingCard />
 
-      </div>
+      <ResultsCard />
 
-      <GlassCard className="mx-auto mt-12 max-w-2xl p-10">
+      <Features />
 
-        <h3 className="mb-6 text-2xl font-semibold">
-          Glass Card
-        </h3>
+      <About />
 
-        <Button>
-          Analyze Video
-        </Button>
-
-      </GlassCard>
-
+      <Footer />
     </main>
   );
 }
+
+export default Home;
