@@ -40,13 +40,13 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+  className={`fixed left-1/2 top-5 z-50 w-[96%] max-w-7xl -translate-x-1/2 rounded-3xl transition-all duration-300 ${
           scrolled
-            ? "border-b border-white/10 bg-[#050816]/80 backdrop-blur-2xl"
-            : "bg-transparent"
+            ? "border border-white/10 bg-white/[0.06] backdrop-blur-3xl shadow-[0_10px_50px_rgba(0,0,0,.45)]"
+            : "border border-white/10 bg-white/[0.04] backdrop-blur-3xl shadow-[0_10px_40px_rgba(0,0,0,.30)]"
         }`}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
           {/* Logo */}
 
           <Link
@@ -63,7 +63,7 @@ export default function Navbar() {
   />
 </div>
 
-  <h1 className="text-2xl font-bold">
+  <h1 className="text-[2rem] font-extrabold tracking-tight">
 
     <span className="text-white">
       Video
@@ -80,27 +80,26 @@ export default function Navbar() {
 
           {/* Desktop */}
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-12 md:flex">
             {navItems.map((item) =>
               item.href.startsWith("#") ? (
                 <button
                   key={item.name}
                   onClick={() => handleSectionClick(item.href)}
-                  className="text-slate-300 transition hover:text-white"
+                  className="text-slate-300 transition-all duration-300 hover:text-white hover:scale-105"
                 >
                   {item.name}
                 </button>
               ) : (
                 <NavLink
-                  key={item.name}
-                  to={item.href}
-                  className="text-slate-300 transition hover:text-white"
-                >
-                  {item.name}
-                </NavLink>
-              )
-            )}
-          </nav>
+  key={item.name}
+  to={item.href}
+  className="text-lg font-medium text-slate-300 transition-all duration-300 hover:text-white hover:-translate-y-0.5"
+>
+  {item.name}
+</NavLink>      )
+)}
+</nav>
 
           {/* Desktop Buttons */}
 
@@ -114,12 +113,12 @@ export default function Navbar() {
 
             <Link
               to="/dashboard"
-              className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 px-5 py-2.5 font-medium text-white transition hover:scale-105"
-            >
+              className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 px-7 py-3 font-semibold text-white shadow-xl shadow-cyan-500/20 transition-all duration-300 hover:scale-105">
               Get Started
               <ArrowRight size={18} />
             </Link>
           </div>
+
 
           {/* Mobile */}
 
@@ -157,7 +156,7 @@ export default function Navbar() {
                   <button
                     key={item.name}
                     onClick={() => handleSectionClick(item.href)}
-                    className="text-left text-slate-300 transition hover:text-white"
+                    className="text-left text-slate-300 transition-all duration-300 hover:text-white hover:scale-105"
                   >
                     {item.name}
                   </button>
@@ -166,7 +165,7 @@ export default function Navbar() {
                     key={item.name}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-slate-300 transition hover:text-white"
+                    className="text-slate-300 transition-all duration-300 hover:text-white hover:scale-105"
                   >
                     {item.name}
                   </NavLink>
@@ -176,12 +175,12 @@ export default function Navbar() {
               <hr className="border-white/10" />
 
               <Link
-                to="/chat"
-                onClick={() => setIsOpen(false)}
-                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center text-white"
-              >
-                Chat
-              </Link>
+  to="/chat"
+  target="_blank"
+  className="rounded-2xl border border-white/10 bg-white/[0.05] px-7 py-3 text-white backdrop-blur-xl transition-all duration-300 hover:bg-white/10 hover:scale-105"
+>
+  Chat
+</Link>
 
               <Link
                 to="/dashboard"
