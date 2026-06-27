@@ -114,7 +114,7 @@ const {
           <div className="h-px flex-1 bg-indigo-500/20" />
 
           <h2 className="text-5xl font-bold">
-            Analyze Your Meeting
+            Analyze A Video
           </h2>
 
           <div className="h-px flex-1 bg-indigo-500/20" />
@@ -218,27 +218,24 @@ const {
             />
           </div>
 
-          <div
-            className="
-            flex
-            items-center
-
-            gap-3
-
-            bg-white/5
-            backdrop-blur-xl
-
-            border
-            border-white/10
-
-            rounded-2xl
-
-            px-5
-            py-4
-            min-w-[180px]
-            "
-          >
-          <div className="relative w-full">
+        <div
+  className="
+    relative
+    z-[100]
+    flex
+    items-center
+    gap-3
+    bg-white/5
+    backdrop-blur-xl
+    border
+    border-white/10
+    rounded-2xl
+    px-5
+    py-4
+    min-w-[180px]
+  "
+>
+          <div className="relative w-full z-[100]">
 
   <button
     type="button"
@@ -280,7 +277,7 @@ const {
 
         shadow-[0_10px_40px_rgba(0,0,0,0.4)]
 
-        z-50
+        z-[999]
       "
     >
       <button
@@ -325,33 +322,27 @@ const {
 
           <button
           onClick={handleAnalyze}
-            className="
-            flex
-            items-center
-
-            gap-3
-
-            px-8
-            py-4
-
-            rounded-2xl
-
-            font-semibold
-
-            bg-gradient-to-r
-            from-indigo-500
-            via-violet-500
-            to-blue-500
-
-            shadow-[0_0_35px_rgba(99,102,241,0.45)]
-
-            hover:scale-105
-
-            transition-all
-            "
+           className="
+relative
+z-10
+flex
+items-center
+gap-3
+px-8
+py-4
+rounded-2xl
+font-semibold
+bg-gradient-to-r
+from-indigo-500
+via-violet-500
+to-blue-500
+shadow-[0_0_35px_rgba(99,102,241,0.45)]
+hover:scale-105
+transition-all
+"
           >
 
-            {loading ? "Analyzing..." : "Analyze Meeting"}
+            {loading ? "Analyzing..." : "Analyze Video"}
             <ArrowRight size={18} />
           </button>
 

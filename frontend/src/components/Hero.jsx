@@ -10,56 +10,32 @@ export default function Hero() {
 <div className="absolute inset-0 -z-10 overflow-hidden">
 
   {/* Base */}
+  <div className="absolute inset-0 bg-[#040611]" />
 
-  <div className="absolute inset-0 bg-[#050816]" />
-
-  {/* Center Glow */}
-
+  {/* Main Purple Glow */}
   <div
     className="absolute inset-0"
     style={{
       background:
-        "radial-gradient(circle at center, rgba(60,130,246,0.18) 0%, rgba(109,40,217,0.14) 25%, rgba(5,8,22,0) 70%)",
+        "radial-gradient(circle at 50% 42%, rgba(124,58,237,.16) 0%, rgba(124,58,237,.08) 22%, transparent 58%)",
     }}
   />
 
-  {/* Top Purple */}
-
+  {/* Soft Cyan Accent */}
   <div
     className="absolute inset-0"
     style={{
       background:
-        "radial-gradient(circle at 50% 0%, rgba(124,58,237,.18) 0%, transparent 45%)",
+        "radial-gradient(circle at 55% 55%, rgba(6,182,212,.08) 0%, transparent 45%)",
     }}
   />
 
-  {/* Bottom Blue */}
-
+  {/* Dark Vignette */}
   <div
     className="absolute inset-0"
     style={{
       background:
-        "radial-gradient(circle at 50% 100%, rgba(34,211,238,.10) 0%, transparent 45%)",
-    }}
-  />
-
-  {/* Left Corner */}
-
-  <div
-    className="absolute inset-0"
-    style={{
-      background:
-        "radial-gradient(circle at 0% 50%, rgba(124,58,237,.12) 0%, transparent 35%)",
-    }}
-  />
-
-  {/* Right Corner */}
-
-  <div
-    className="absolute inset-0"
-    style={{
-      background:
-        "radial-gradient(circle at 100% 50%, rgba(34,211,238,.10) 0%, transparent 35%)",
+        "radial-gradient(circle at center, transparent 45%, rgba(0,0,0,.45) 100%)",
     }}
   />
 
