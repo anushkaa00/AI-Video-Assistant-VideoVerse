@@ -45,25 +45,47 @@ export default function Hero() {
 
         {/* Heading */}
 
-        <motion.h1
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: .15 }}
-          className="mt-10 text-5xl font-black leading-tight text-white md:text-6xl lg:text-7xl"
-        >
-          Analyze{" "}
+<motion.h1
+  initial={{ opacity: 0, y: 35 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.15 }}
+  className="relative mt-10 text-5xl font-black leading-tight text-white md:text-6xl lg:text-7xl"
+>
+  {/* Glow behind heading */}
 
-          <span className="bg-gradient-to-r from-violet-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+  <div className="absolute left-1/2 top-1/2 -z-10 h-[220px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-violet-500/20 via-cyan-500/20 to-violet-500/20 blur-[100px]" />
 
-            Videos
+  <span
+    className="text-white"
+    style={{
+      textShadow:
+        "0 0 18px rgba(255,255,255,0.12), 0 0 40px rgba(139,92,246,0.12)",
+    }}
+  >
+    Analyze{" "}
+  </span>
 
-          </span>
+  <span
+    className="bg-gradient-to-r from-[#B06CFF] via-[#7A7CFF] to-[#1CC8FF] bg-clip-text text-transparent"
+    style={{
+      filter: "drop-shadow(0 0 20px rgba(124,58,237,.35))",
+    }}
+  >
+    Videos
+  </span>
 
-          <br />
+  <br />
 
-          in Seconds.
-
-        </motion.h1>
+  <span
+    className="text-white"
+    style={{
+      textShadow:
+        "0 0 18px rgba(255,255,255,0.12), 0 0 40px rgba(34,211,238,0.10)",
+    }}
+  >
+    in Seconds.
+  </span>
+</motion.h1>
 
         {/* Subtitle */}
 
