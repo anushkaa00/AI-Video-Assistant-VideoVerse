@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Video, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -52,13 +53,29 @@ export default function Navbar() {
             to="/"
             className="flex items-center gap-3 font-bold text-white"
           >
-            <div className="rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-2">
-              <Video className="h-6 w-6" />
-            </div>
+            <div className="flex items-center gap-3">
 
-            <span className="text-2xl">
-              Video<span className="text-cyan-400">Verse</span>
-            </span>
+ <div className="flex h-14 w-14 items-center justify-center overflow-hidden">
+  <img
+    src={logo}
+    alt="VideoVerse"
+    className="h-full w-full scale-[2.2] object-contain"
+  />
+</div>
+
+  <h1 className="text-2xl font-bold">
+
+    <span className="text-white">
+      Video
+    </span>
+
+    <span className="bg-gradient-to-r from-violet-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+      Verse
+    </span>
+
+  </h1>
+
+</div>
           </Link>
 
           {/* Desktop */}
