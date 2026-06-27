@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <main className="min-h-screen bg-[#050816]">
+    <main className="min-h-screen bg-transparent">
       <Navbar />
 
       <Hero />

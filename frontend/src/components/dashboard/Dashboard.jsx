@@ -19,7 +19,7 @@ export default function Dashboard() {
 
   if (!meetingData) {
     return (
-      <div className="min-h-screen bg-[#050816]">
+      <div className="min-h-screen bg-transparent">
         <Navbar />
 
         <div className="flex h-[80vh] items-center justify-center px-6">
@@ -53,7 +53,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-[#050816]">
+    <div className="min-h-screen bg-transparent">
       <Navbar />
 
       <div className="mx-auto max-w-7xl px-6 pt-28 pb-20">

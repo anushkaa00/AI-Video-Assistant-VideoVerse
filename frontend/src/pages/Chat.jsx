@@ -90,7 +90,7 @@ export default function Chat() {
   }
 
   return (
-    <div className="min-h-screen bg-[#050816]">
+    <div className="min-h-screen bg-transparent">
       <Navbar />
 
       <div className="mx-auto flex max-w-7xl gap-8 px-6 pt-28 pb-10">

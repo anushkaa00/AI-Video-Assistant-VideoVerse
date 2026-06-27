@@ -4,27 +4,21 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#050816] pt-44 pb-32">
+    <section className="relative overflow-hidden bg-transparent pt-44 pb-28">
 
       {/* Background */}
 
       <div className="absolute inset-0 -z-10">
 
-        {/* Top Glow */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-[#07091c] to-[#050816]" />
 
-        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-violet-600/10 blur-[170px]" />
+        <div className="absolute left-1/2 top-[-180px] h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-violet-600/10 blur-[180px]" />
 
-        {/* Left */}
+        <div className="absolute -left-48 top-56 h-[450px] w-[450px] rounded-full bg-violet-500/10 blur-[170px]" />
 
-        <div className="absolute -left-40 top-40 h-[420px] w-[420px] rounded-full bg-violet-600/10 blur-[150px]" />
+        <div className="absolute -right-48 top-36 h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-[170px]" />
 
-        {/* Right */}
-
-        <div className="absolute -right-40 top-24 h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[150px]" />
-
-        {/* Bottom */}
-
-        <div className="absolute bottom-0 left-1/2 h-[250px] w-[800px] -translate-x-1/2 bg-gradient-to-r from-violet-500/5 via-cyan-500/10 to-violet-500/5 blur-[120px]" />
+        <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[length:22px_22px]" />
 
       </div>
 
@@ -35,14 +29,15 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#12172b]/70 px-6 py-3 backdrop-blur-3xl shadow-[0_0_35px_rgba(124,58,237,.15)]"
+          transition={{ duration: .5 }}
+          className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.05] px-6 py-3 backdrop-blur-3xl shadow-[0_0_35px_rgba(124,58,237,.15)]"
         >
           <Sparkles
             size={17}
             className="text-violet-400"
           />
 
-          <span className="text-slate-200">
+          <span className="text-slate-200 font-medium">
             AI Powered Video Intelligence
           </span>
 
@@ -54,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: .15 }}
-          className="mt-10 text-6xl font-black leading-tight text-white lg:text-7xl"
+          className="mt-10 text-5xl font-black leading-tight text-white md:text-6xl lg:text-7xl"
         >
           Analyze{" "}
 
@@ -79,8 +74,8 @@ export default function Hero() {
           className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-400"
         >
           Upload any video and let VideoVerse automatically generate
-          transcripts, summaries, timestamps, highlights and an AI
-          chat assistant.
+          transcripts, summaries, timestamps, highlights and an AI chat
+          assistant.
         </motion.p>
 
         {/* Buttons */}
@@ -89,12 +84,12 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: .45 }}
-          className="mt-14 flex justify-center gap-6"
+          className="mt-14 flex flex-wrap justify-center gap-6"
         >
 
           <Link
             to="/dashboard"
-            className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400 px-9 py-4 text-lg font-semibold text-white shadow-[0_10px_35px_rgba(56,189,248,.25)] transition-all duration-300 hover:scale-105"
+            className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400 px-9 py-4 text-lg font-semibold text-white shadow-[0_10px_40px_rgba(59,130,246,.25)] transition-all duration-300 hover:scale-105"
           >
             Get Started
 
@@ -102,7 +97,7 @@ export default function Hero() {
           </Link>
 
           <button
-            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#13172d]/80 px-9 py-4 text-lg font-semibold text-white backdrop-blur-3xl transition-all duration-300 hover:bg-white/10"
+            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-9 py-4 text-lg font-semibold text-white backdrop-blur-3xl transition-all duration-300 hover:bg-white/[0.08]"
           >
             <PlayCircle size={21} />
 
