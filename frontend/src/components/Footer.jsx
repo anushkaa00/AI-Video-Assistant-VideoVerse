@@ -43,9 +43,15 @@ export default function Footer() {
       });
     }
   };
+  
 
   return (
     <footer className="relative mt-32 px-6 pb-8">
+      <div className="mb-6 flex justify-center">
+  <span className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-300 backdrop-blur-xl">
+    ✦ Stay Connected
+  </span>
+</div>
       <div className="mx-auto max-w-7xl rounded-[40px]
 border border-white/10
 bg-white/[0.04]
@@ -57,6 +63,8 @@ py-14">
 md:grid-cols-2
 lg:grid-cols-[2.6fr_1fr_1fr_1.2fr]
 items-start">
+
+  
           {/* Logo */}
 
           <div>
@@ -64,7 +72,7 @@ items-start">
               to="/"
               className="flex items-center gap-3 text-white"
             >
-              <div className="flex h-14 w-14 items-center justify-center overflow-hidden">
+              <div className="flex h-16 w-16 items-center justify-center overflow-hidden">
 
     <img
         src={logo}
@@ -74,7 +82,7 @@ items-start">
 
 </div>
 
-              <span className="text-2xl font-bold">
+              <span className="text-3xl font-bold">
                 Video
                 <span className="text-cyan-400">
                   Verse
@@ -89,14 +97,20 @@ items-start">
             <div className="mt-6 flex gap-4">
               <a
                 href="#"
-                className="rounded-xl border border-white/10 bg-white/5 p-3 text-slate-300 transition hover:bg-white/10 hover:text-white"
+                className="rounded-2xl border border-white/10 bg-white/5 p-3 text-slate-300 transition hover:bg-white/10 hover:text-white hover:-translate-y-1
+hover:border-cyan-400/40
+hover:bg-cyan-500/10
+transition-all duration-300"
               >
                 <Github size={18} />
               </a>
 
               <a
                 href="#"
-                className="rounded-xl border border-white/10 bg-white/5 p-3 text-slate-300 transition hover:bg-white/10 hover:text-white"
+                className="rounded-2xl border border-white/10 bg-white/5 p-3 text-slate-300 transition hover:bg-white/10 hover:text-white hover:-translate-y-1
+hover:border-cyan-400/40
+hover:bg-cyan-500/10
+transition-all duration-300"
               >
                 <Linkedin size={18} />
               </a>
