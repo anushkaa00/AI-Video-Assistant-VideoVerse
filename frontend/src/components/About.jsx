@@ -1,27 +1,33 @@
 import { motion } from "framer-motion";
-import { Brain, MessageSquareText, FileText, Sparkles } from "lucide-react";
+import {
+  GraduationCap,
+  BriefcaseBusiness,
+  Video,
+  Sparkles,
+} from "lucide-react";
+
 import GlassCard from "./common/GlassCard";
 import Badge from "./common/Badge";
 import SectionHeading from "./common/SectionHeading";
 
 const features = [
   {
-    icon: Brain,
-    title: "AI Video Intelligence",
+    icon: GraduationCap,
+    title: "Students",
     description:
-      "Advanced AI analyzes your uploaded videos to generate accurate summaries, transcripts, key highlights and actionable insights."
+      "Turn lengthy lectures into concise notes, searchable transcripts and quick summaries so revision becomes effortless."
   },
   {
-    icon: FileText,
-    title: "Instant Summaries",
+    icon: BriefcaseBusiness,
+    title: "Professionals",
     description:
-      "Save time by automatically generating concise video summaries instead of watching long recordings."
+      "Extract meeting highlights, action items and key decisions without replaying hours of recordings."
   },
   {
-    icon: MessageSquareText,
-    title: "Chat with Videos",
+    icon: Video,
+    title: "Content Creators",
     description:
-      "Ask questions about your uploaded videos using natural language and receive context-aware answers."
+      "Analyze YouTube videos, webinars and podcasts to quickly find important moments and valuable insights."
   },
 ];
 
@@ -42,13 +48,13 @@ export default function About() {
         <div className="flex justify-center mb-4">
           <Badge>
             <Sparkles size={14} />
-            About VideoVerse
+            Who It's For
           </Badge>
         </div>
 
         <SectionHeading
-          title="Transform Videos into Actionable Knowledge"
-          subtitle="VideoVerse uses modern AI models to understand your videos, generate intelligent summaries, extract key moments, and let you interact with your content through an AI-powered chat interface."
+          title="Built for Everyone Who Works with Videos"
+          subtitle="Whether you're a student reviewing lectures, a professional analyzing meetings, or a creator organizing long-form content, VideoVerse helps you understand videos faster with AI-powered insights."
           center
         />
 

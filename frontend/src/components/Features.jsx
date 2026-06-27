@@ -11,14 +11,14 @@ import {
 const features = [
   {
     icon: Upload,
-    title: "① Upload Videos",
+    title: " Upload Videos",
     description:
       "Paste a YouTube link or upload a local video to begin AI analysis in just a few clicks.",
     gradient: "from-indigo-500 to-violet-500",
   },
   {
     icon: Cpu,
-    title: "② AI Processes Video",
+    title: " AI Processes Video",
     description:
      "Our AI analyzes the entire video, understands the context and extracts meaningful information.",
 
@@ -26,28 +26,28 @@ const features = [
   },
   {
     icon: FileText,
-    title: "③ Generate Transcript ",
+    title: " Generate Transcript ",
     description:
       "Automatically create an accurate transcript with speaker-aware text for easy reference.",
     gradient: "from-purple-500 to-pink-500",
   },
   {
     icon: Sparkles,
-    title: "④ Smart Summary",
+    title: " Smart Summary",
     description:
       "Generate concise summaries with key takeaways, timestamps and important discussion points.",
     gradient: "from-sky-500 to-cyan-500",
   },
   {
     icon: ListChecks,
-    title: "⑤ Highlights & Action Items",
+    title: " Highlights & Action Items",
     description:
        "Identify tasks, follow-ups and decisions automatically without manual note taking.",
     gradient: "from-orange-500 to-red-500",
   },
   {
-    icon: ShieldCheck,
-    title: "⑥ Chat with AI",
+    icon: MessageCircleMore,
+    title: " Chat with AI",
     description:
       "Ask questions about the uploaded video and receive context-aware answers instantly.",
   },
@@ -55,7 +55,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="relative py-28 px-6 overflow-hidden">
+    <section id="workflow" className="relative py-28 px-6 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-0 top-20 h-80 w-80 rounded-full bg-indigo-500/10 blur-[140px]" />
         <div className="absolute right-0 bottom-20 h-96 w-96 rounded-full bg-cyan-500/10 blur-[160px]" />
@@ -73,13 +73,12 @@ export default function Features() {
           </span>
 
           <h2 className="mt-6 text-4xl font-black text-white md:text-5xl">
-            How This Works?
+            How VideoVerse Works?
             
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-400">
-            Powerful AI tools designed to transform long videos into searchable,
-            actionable knowledge.
+            From upload to AI-powered insights, VideoVerse transforms long videos into structured, searchable knowledge in seconds.
           </p>
         </motion.div>
 

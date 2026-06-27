@@ -41,7 +41,7 @@ const cards = [
 
 export default function ResultsCard() {
   return (
-    <section className="relative py-24 px-6">
+    <section id="features" className="relative py-24 px-6">
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
 
