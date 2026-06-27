@@ -91,58 +91,7 @@ export default function About() {
 
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-20"
-        >
-          <GlassCard className="p-10">
-
-            <div className="grid gap-10 md:grid-cols-2">
-
-              <div>
-                <h3 className="text-3xl font-bold text-white mb-5">
-                  Why VideoVerse?
-                </h3>
-
-                <p className="text-slate-300 leading-8">
-                  Watching lengthy videos to locate important information can
-                  be time-consuming. VideoVerse automates the entire process by
-                  generating transcripts, summaries, highlights, timestamps,
-                  and AI-powered insights within seconds.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-
-                {[
-                  "AI-powered video analysis",
-                  "Accurate transcript generation",
-                  "Automatic key highlights",
-                  "Video summaries in seconds",
-                  "Interactive AI chat",
-                  "Modern SaaS experience",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4"
-                  >
-                    <div className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
-
-                    <span className="text-slate-200">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-
-              </div>
-
-            </div>
-
-          </GlassCard>
-        </motion.div>
+        
 
       </div>
     </section>

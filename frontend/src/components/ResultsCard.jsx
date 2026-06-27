@@ -32,7 +32,7 @@ const cards = [
   },
   {
     icon: MessageSquare,
-    title: "Chat with Video",
+    title: "Chat",
     description:
       "Ask natural language questions about any uploaded video and receive AI-generated answers.",
     gradient: "from-sky-500 to-cyan-500",
@@ -53,21 +53,9 @@ export default function ResultsCard() {
         >
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-2 text-sm font-medium text-indigo-300 backdrop-blur-xl">
             <Sparkles size={16} />
-            AI Generated Results
+            What You'll Get
           </div>
 
-          <h2 className="text-4xl font-black text-white md:text-5xl">
-            Everything You Need From
-            <span className="block bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Every Video
-            </span>
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-slate-400">
-            VideoVerse transforms long videos into structured knowledge with
-            AI-generated summaries, timestamps, highlights, action items and an
-            intelligent chat assistant.
-          </p>
         </motion.div>
 
         {/* Cards */}
@@ -119,49 +107,7 @@ export default function ResultsCard() {
 
         {/* Bottom Glass Card */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.25 }}
-          className="mt-20"
-        >
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-indigo-500/10 via-white/5 to-cyan-500/10 p-10 backdrop-blur-3xl">
-            <div className="grid items-center gap-10 lg:grid-cols-2">
-              <div>
-                <h3 className="text-3xl font-bold text-white">
-                  AI Video Intelligence
-                </h3>
-
-                <p className="mt-5 text-slate-300 leading-8">
-                  Upload your videos once and let VideoVerse automatically
-                  generate transcripts, summaries, timestamps, action items,
-                  highlights and contextual answers—saving hours of manual work.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {[
-                  "Automatic AI summaries",
-                  "Transcript generation",
-                  "Timestamp detection",
-                  "Important highlights",
-                  "Action item extraction",
-                  "Interactive AI chat",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4"
-                  >
-                    <div className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
-
-                    <span className="text-slate-200">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   );

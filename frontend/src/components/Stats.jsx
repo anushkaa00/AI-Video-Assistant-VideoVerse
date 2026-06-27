@@ -17,7 +17,7 @@ const stats = [
   {
     icon: MessageSquareText,
     value: "24/7",
-    label: "Video Chat",
+    label: "Smart AI Insights",
     color: "from-violet-500 to-indigo-500",
   },
   {

@@ -1,55 +1,55 @@
 import { motion } from "framer-motion";
 import {
   Upload,
+  Cpu,
   FileText,
   Sparkles,
-  MessageSquareText,
-  Clock3,
-  ShieldCheck,
+  ListChecks,
+  MessageCircleMore,
 } from "lucide-react";
 
 const features = [
   {
     icon: Upload,
-    title: "Upload Videos",
+    title: "① Upload Videos",
     description:
-      "Upload recordings in just a few clicks. VideoVerse securely processes your videos using AI.",
+      "Paste a YouTube link or upload a local video to begin AI analysis in just a few clicks.",
     gradient: "from-indigo-500 to-violet-500",
   },
   {
-    icon: FileText,
-    title: "Automatic Transcript",
+    icon: Cpu,
+    title: "② AI Processes Video",
     description:
-      "Generate accurate transcripts instantly without spending hours writing notes manually.",
+     "Our AI analyzes the entire video, understands the context and extracts meaningful information.",
+
     gradient: "from-cyan-500 to-blue-500",
   },
   {
-    icon: Sparkles,
-    title: "AI Summary",
+    icon: FileText,
+    title: "③ Generate Transcript ",
     description:
-      "Receive concise summaries highlighting only the most important parts of every video.",
+      "Automatically create an accurate transcript with speaker-aware text for easy reference.",
     gradient: "from-purple-500 to-pink-500",
   },
   {
-    icon: MessageSquareText,
-    title: "Chat with Video",
+    icon: Sparkles,
+    title: "④ Smart Summary",
     description:
-      "Ask questions in natural language and let AI answer directly from your uploaded videos.",
+      "Generate concise summaries with key takeaways, timestamps and important discussion points.",
     gradient: "from-sky-500 to-cyan-500",
   },
   {
-    icon: Clock3,
-    title: "Key Moments",
+    icon: ListChecks,
+    title: "⑤ Highlights & Action Items",
     description:
-      "Automatically detect timestamps, highlights and important discussion points.",
+       "Identify tasks, follow-ups and decisions automatically without manual note taking.",
     gradient: "from-orange-500 to-red-500",
   },
   {
     icon: ShieldCheck,
-    title: "Secure Processing",
+    title: "⑥ Chat with AI",
     description:
-      "Your uploaded videos are processed securely with a modern backend architecture.",
-    gradient: "from-emerald-500 to-teal-500",
+      "Ask questions about the uploaded video and receive context-aware answers instantly.",
   },
 ];
 
@@ -69,14 +69,12 @@ export default function Features() {
           className="mx-auto mb-16 max-w-3xl text-center"
         >
           <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-300">
-            Features
+            Working
           </span>
 
           <h2 className="mt-6 text-4xl font-black text-white md:text-5xl">
-            Everything Needed For
-            <span className="block bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              AI Video Intelligence
-            </span>
+            How This Works?
+            
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-400">
@@ -122,47 +120,7 @@ export default function Features() {
           })}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-20 rounded-3xl border border-white/10 bg-gradient-to-r from-indigo-500/10 via-white/5 to-cyan-500/10 p-10 backdrop-blur-3xl"
-        >
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <h3 className="text-3xl font-bold text-white">
-                Why Choose VideoVerse?
-              </h3>
-
-              <p className="mt-5 leading-8 text-slate-300">
-                Stop spending hours watching lengthy recordings. VideoVerse
-                automatically understands your videos and provides summaries,
-                transcripts, highlights and intelligent answers within seconds.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {[
-                "AI Powered Analysis",
-                "Video Summaries",
-                "Accurate Transcripts",
-                "Action Item Detection",
-                "Timestamp Highlights",
-                "Chat with Videos",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4"
-                >
-                  <div className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
-
-                  <span className="text-slate-200">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+      
       </div>
     </section>
   );

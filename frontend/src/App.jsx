@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
+import AppBackground from "./components/common/AppBackground";
 import Home from "./pages/Home";
 import Chat from "./pages/Chat";
 import Dashboard from "./pages/Dashboard";
@@ -8,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 function App() {
   return (
     <>
+     <AppBackground />
       <Toaster position="top-right" />
 
       <Routes>

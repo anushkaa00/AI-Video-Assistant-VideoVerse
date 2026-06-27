@@ -1,29 +1,70 @@
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-transparent pt-44 pb-28">
 
-      {/* Background */}
+      {/* Premium Gradient Background */}
 
-      <div className="absolute inset-0 -z-10">
+<div className="absolute inset-0 -z-10 overflow-hidden">
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-[#07091c] to-[#050816]" />
+  {/* Base */}
 
-        <div className="absolute left-1/2 top-[-180px] h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-violet-600/10 blur-[180px]" />
+  <div className="absolute inset-0 bg-[#050816]" />
 
-        <div className="absolute -left-48 top-56 h-[450px] w-[450px] rounded-full bg-violet-500/10 blur-[170px]" />
+  {/* Center Glow */}
 
-        <div className="absolute -right-48 top-36 h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-[170px]" />
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(circle at center, rgba(60,130,246,0.18) 0%, rgba(109,40,217,0.14) 25%, rgba(5,8,22,0) 70%)",
+    }}
+  />
 
-        <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[length:22px_22px]" />
+  {/* Top Purple */}
 
-      </div>
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(circle at 50% 0%, rgba(124,58,237,.18) 0%, transparent 45%)",
+    }}
+  />
 
-      <div className="mx-auto max-w-5xl px-6 text-center">
+  {/* Bottom Blue */}
 
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(circle at 50% 100%, rgba(34,211,238,.10) 0%, transparent 45%)",
+    }}
+  />
+
+  {/* Left Corner */}
+
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(circle at 0% 50%, rgba(124,58,237,.12) 0%, transparent 35%)",
+    }}
+  />
+
+  {/* Right Corner */}
+
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(circle at 100% 50%, rgba(34,211,238,.10) 0%, transparent 35%)",
+    }}
+  />
+
+</div>
+<div className="relative mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
         {/* Badge */}
 
         <motion.div
@@ -109,14 +150,20 @@ export default function Hero() {
           className="mt-14 flex flex-wrap justify-center gap-6"
         >
 
-          <Link
-            to="/dashboard"
-            className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400 px-9 py-4 text-lg font-semibold text-white shadow-[0_10px_40px_rgba(59,130,246,.25)] transition-all duration-300 hover:scale-105"
-          >
-            Get Started
-
-            <ArrowRight size={20} />
-          </Link>
+<button
+  onClick={() =>
+    document
+      .getElementById("analysis")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+  }
+  className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400 px-9 py-4 text-lg font-semibold text-white shadow-[0_10px_40px_rgba(59,130,246,.25)] transition-all duration-300 hover:scale-105"
+>
+  Get Started
+  <ArrowRight size={20} />
+</button>
 
           <button
             className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-9 py-4 text-lg font-semibold text-white backdrop-blur-3xl transition-all duration-300 hover:bg-white/[0.08]"

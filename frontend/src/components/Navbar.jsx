@@ -117,7 +117,7 @@ export default function Navbar() {
               to="/dashboard"
               className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 px-7 py-3 font-semibold text-white shadow-xl shadow-cyan-500/20 transition-all duration-300 hover:scale-105"
             >
-              Get Started
+              Dashboard
 
               <ArrowRight size={18} />
             </Link>
@@ -197,7 +197,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 px-5 py-3 text-center font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:scale-[1.02]"
               >
-                Get Started
+                Dashboard
               </Link>
 
             </div>

@@ -13,10 +13,11 @@ function Home() {
       <Navbar />
 
       <Hero />
-
+      
+<MeetingCard />
       <Stats />
 
-      <MeetingCard />
+      
 
       <ResultsCard />
 
