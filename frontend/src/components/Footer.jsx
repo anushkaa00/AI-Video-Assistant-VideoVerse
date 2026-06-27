@@ -1,4 +1,10 @@
-import { Github, Linkedin, Mail, Heart, Video } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+} from "lucide-react";
+
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
@@ -39,9 +45,18 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-transparent">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="relative mt-32 px-6 pb-8">
+      <div className="mx-auto max-w-7xl rounded-[40px]
+border border-white/10
+bg-white/[0.04]
+backdrop-blur-3xl
+shadow-[0_20px_80px_rgba(0,0,0,.45)]
+px-12
+py-14">
+        <div className="grid gap-12 md:grid-cols-2 grid-cols-1
+md:grid-cols-2
+lg:grid-cols-[2.6fr_1fr_1fr_1.2fr]
+items-start">
           {/* Logo */}
 
           <div>
@@ -49,9 +64,15 @@ export default function Footer() {
               to="/"
               className="flex items-center gap-3 text-white"
             >
-              <div className="rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-2">
-                <Video size={24} />
-              </div>
+              <div className="flex h-14 w-14 items-center justify-center overflow-hidden">
+
+    <img
+        src={logo}
+        alt="VideoVerse"
+        className="h-full w-full scale-[2.2] object-contain"
+    />
+
+</div>
 
               <span className="text-2xl font-bold">
                 Video
@@ -62,9 +83,7 @@ export default function Footer() {
             </Link>
 
             <p className="mt-5 leading-7 text-slate-400">
-              AI-powered platform that transforms long videos into
-              summaries, transcripts, highlights and intelligent
-              conversations.
+              AI-powered video intelligence that converts long videos into transcripts, summaries, highlights and actionable insights in seconds.
             </p>
 
             <div className="mt-6 flex gap-4">
@@ -180,12 +199,7 @@ export default function Footer() {
           </p>
 
           <p className="flex items-center gap-2">
-            Built with
-            <Heart
-              size={15}
-              className="fill-red-500 text-red-500"
-            />
-            using React + Flask + AI
+           Built for Students • Professionals • Creators
           </p>
         </div>
       </div>
