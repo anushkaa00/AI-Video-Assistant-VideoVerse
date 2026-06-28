@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
+import { useAuth } from '@/context/AuthContext'
 import { scrollToSection } from '@/lib/scroll'
 import { cn } from '@/lib/utils'
 
 const navLinks = [
-  { label: 'Home', hash: '#home' },
-  { label: 'Features', hash: '#features' },
-  { label: 'About', hash: '#about' },
+  { label: 'Home', hash: 'home' },
+  { label: 'Features', hash: 'features' },
+  { label: 'About', hash: 'about' },
 ]
 
 export function Navbar() {
@@ -18,6 +19,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
+  const { isAuthenticated, logout, user } = useAuth()
   const isLanding = location.pathname === '/'
 
   useEffect(() => {
@@ -32,8 +34,15 @@ export function Navbar() {
 
   const handleNavClick = (hash: string) => {
     if (isLanding) {
-      scrollToSection(hash.replace('#', ''))
+      scrollToSection(hash)
+    } else {
+      navigate(`/#${hash}`)
     }
+  }
+
+  const handleLogout = async () => {
+    await logout()
+    navigate('/')
   }
 
   return (
@@ -56,32 +65,32 @@ export function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) =>
-            isLanding ? (
-              <button
-                key={link.hash}
-                type="button"
-                onClick={() => handleNavClick(link.hash)}
-                className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >
-                {link.label}
-              </button>
-            ) : (
-              <Link
-                key={link.hash}
-                to={`/${link.hash}`}
-                className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >
-                {link.label}
-              </Link>
-            ),
-          )}
+          {navLinks.map((link) => (
+            <button
+              key={link.hash}
+              type="button"
+              onClick={() => handleNavClick(link.hash)}
+              className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+            >
+              {link.label}
+            </button>
+          ))}
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button variant="ghost" size="sm" onClick={() => navigate('/sign-in')}>
-            Sign In
-          </Button>
+          {isAuthenticated ? (
+            <>
+              <span className="text-sm text-slate-500 hidden lg:inline">{user?.name}</span>
+              <Button variant="ghost" size="sm" onClick={handleLogout}>
+                <LogOut className="h-4 w-4" aria-hidden="true" />
+                Logout
+              </Button>
+            </>
+          ) : (
+            <Button variant="ghost" size="sm" onClick={() => navigate('/sign-in')}>
+              Sign In
+            </Button>
+          )}
           <Button variant="secondary" size="sm" onClick={() => navigate('/chat')}>
             Chat
           </Button>
@@ -115,38 +124,34 @@ export function Navbar() {
             className="mx-auto mt-2 max-w-7xl glass-strong rounded-2xl p-4 md:hidden"
           >
             <div className="flex flex-col gap-1">
-              {navLinks.map((link) =>
-                isLanding ? (
-                  <button
-                    key={link.hash}
-                    type="button"
-                    onClick={() => {
-                      handleNavClick(link.hash)
-                      setMobileOpen(false)
-                    }}
-                    className="rounded-xl px-4 py-3 text-left text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-colors cursor-pointer"
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link
-                    key={link.hash}
-                    to={`/${link.hash}`}
-                    className="rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-colors cursor-pointer"
-                  >
-                    {link.label}
-                  </Link>
-                ),
-              )}
-              <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-3">
-                <Button
-                  variant="ghost"
-                  size="md"
-                  className="w-full"
-                  onClick={() => navigate('/sign-in')}
+              {navLinks.map((link) => (
+                <button
+                  key={link.hash}
+                  type="button"
+                  onClick={() => {
+                    handleNavClick(link.hash)
+                    setMobileOpen(false)
+                  }}
+                  className="rounded-xl px-4 py-3 text-left text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-colors cursor-pointer"
                 >
-                  Sign In
-                </Button>
+                  {link.label}
+                </button>
+              ))}
+              <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-3">
+                {isAuthenticated ? (
+                  <Button variant="ghost" size="md" className="w-full" onClick={handleLogout}>
+                    Logout
+                  </Button>
+                ) : (
+                  <Button
+                    variant="ghost"
+                    size="md"
+                    className="w-full"
+                    onClick={() => navigate('/sign-in')}
+                  >
+                    Sign In
+                  </Button>
+                )}
                 <Button
                   variant="secondary"
                   size="md"

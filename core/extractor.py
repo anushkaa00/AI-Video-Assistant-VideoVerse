@@ -39,6 +39,26 @@ def extract_key_decisions(transcript: str) -> str:
     return chain.invoke(transcript)
 
 
+def extract_key_highlights(transcript: str) -> str:
+    chain = build_chain(
+        "You are an expert video analyst. From the transcript, extract the most "
+        "important highlights, key points, and notable moments. "
+        "Format as a numbered list. If none found say 'No highlights found.'"
+    )
+    return chain.invoke(transcript)
+
+
+def extract_timestamps(transcript: str) -> str:
+    chain = build_chain(
+        "You are an expert video analyst. Based on the transcript content, identify "
+        "important moments and estimate their approximate timestamps in MM:SS format. "
+        "Format each as: [MM:SS] - description. "
+        "If timing cannot be inferred, provide logical segment markers. "
+        "If none found say 'No timestamps found.'"
+    )
+    return chain.invoke(transcript)
+
+
 def extract_questions(transcript: str) -> str:
     chain = build_chain(
         "From the meeting transcript, extract all unresolved questions "
