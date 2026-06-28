@@ -3,12 +3,12 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
 import { AnimatedGradient } from '@/components/ui/AnimatedGradient'
-import { VideoPreviewMockup } from '@/components/landing/VideoPreviewMockup'
 import { fadeInUp, staggerContainer } from '@/lib/motion'
+import { scrollToSection } from '@/lib/scroll'
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-28 pb-20 sm:pt-32 lg:pt-36">
+    <section id="home" className="relative overflow-hidden pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36">
       <AnimatedGradient variant="hero" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -46,16 +46,17 @@ export function HeroSection() {
             variants={fadeInUp}
             className="mt-10 flex justify-center"
           >
-            <Button variant="primary" size="lg" magnetic>
+            <Button
+              variant="primary"
+              size="lg"
+              magnetic
+              onClick={() => scrollToSection('analyze')}
+            >
               Analyze Video
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Button>
           </motion.div>
         </motion.div>
-
-        <div className="mt-16 lg:mt-20">
-          <VideoPreviewMockup />
-        </div>
       </div>
     </section>
   )

@@ -3,7 +3,9 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { BackgroundEffects } from '@/components/ui/BackgroundEffects'
 import { HeroSection } from '@/sections/landing/HeroSection'
+import { AnalyzeVideoSection } from '@/sections/landing/AnalyzeVideoSection'
 import { FeaturesSection } from '@/sections/landing/FeaturesSection'
+import { AboutSection } from '@/sections/landing/AboutSection'
 import { WorkflowSection } from '@/sections/landing/WorkflowSection'
 import { FAQSection } from '@/sections/landing/FAQSection'
 
@@ -19,7 +21,9 @@ export default function LandingPage() {
       <Navbar />
       <main>
         <HeroSection />
+        <AnalyzeVideoSection />
         <FeaturesSection />
+        <AboutSection />
         <WorkflowSection />
         <FAQSection />
       </main>

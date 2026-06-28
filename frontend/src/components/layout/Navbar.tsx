@@ -1,25 +1,40 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ArrowRight } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
+import { scrollToSection } from '@/lib/scroll'
 import { cn } from '@/lib/utils'
 
 const navLinks = [
-  { label: 'Features', href: '#features' },
-  { label: 'Workflow', href: '#workflow' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Home', hash: '#home' },
+  { label: 'Features', hash: '#features' },
+  { label: 'About', hash: '#about' },
 ]
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const isLanding = location.pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    setMobileOpen(false)
+  }, [location.pathname])
+
+  const handleNavClick = (hash: string) => {
+    if (isLanding) {
+      scrollToSection(hash.replace('#', ''))
+    }
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
@@ -32,30 +47,46 @@ export function Navbar() {
         )}
         aria-label="Main navigation"
       >
-        <a
-          href="/"
+        <Link
+          to="/"
           className="cursor-pointer group transition-opacity duration-200 hover:opacity-90"
           aria-label="VideoVerse home"
         >
           <Logo size="sm" />
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            isLanding ? (
+              <button
+                key={link.hash}
+                type="button"
+                onClick={() => handleNavClick(link.hash)}
+                className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+              >
+                {link.label}
+              </button>
+            ) : (
+              <Link
+                key={link.hash}
+                to={`/${link.hash}`}
+                className="text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </div>
 
-        <div className="hidden md:flex">
-          <Button variant="primary" size="sm" magnetic>
-            Analyze Video
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        <div className="hidden items-center gap-3 md:flex">
+          <Button variant="ghost" size="sm" onClick={() => navigate('/sign-in')}>
+            Sign In
+          </Button>
+          <Button variant="secondary" size="sm" onClick={() => navigate('/chat')}>
+            Chat
+          </Button>
+          <Button variant="primary" size="sm" magnetic onClick={() => navigate('/dashboard')}>
+            Dashboard
           </Button>
         </div>
 
@@ -84,20 +115,54 @@ export function Navbar() {
             className="mx-auto mt-2 max-w-7xl glass-strong rounded-2xl p-4 md:hidden"
           >
             <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-colors cursor-pointer"
-                  onClick={() => setMobileOpen(false)}
+              {navLinks.map((link) =>
+                isLanding ? (
+                  <button
+                    key={link.hash}
+                    type="button"
+                    onClick={() => {
+                      handleNavClick(link.hash)
+                      setMobileOpen(false)
+                    }}
+                    className="rounded-xl px-4 py-3 text-left text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-colors cursor-pointer"
+                  >
+                    {link.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.hash}
+                    to={`/${link.hash}`}
+                    className="rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-colors cursor-pointer"
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              )}
+              <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-3">
+                <Button
+                  variant="ghost"
+                  size="md"
+                  className="w-full"
+                  onClick={() => navigate('/sign-in')}
                 >
-                  {link.label}
-                </a>
-              ))}
-              <div className="mt-3 border-t border-white/10 pt-3">
-                <Button variant="primary" size="md" magnetic className="w-full">
-                  Analyze Video
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  Sign In
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="md"
+                  className="w-full"
+                  onClick={() => navigate('/chat')}
+                >
+                  Chat
+                </Button>
+                <Button
+                  variant="primary"
+                  size="md"
+                  magnetic
+                  className="w-full"
+                  onClick={() => navigate('/dashboard')}
+                >
+                  Dashboard
                 </Button>
               </div>
             </div>
