@@ -5,9 +5,9 @@ export default {
     extend: {
       colors: {
         surface: {
-          DEFAULT: '#0a0a0f',
-          raised: '#111118',
-          overlay: '#16161f',
+          DEFAULT: '#030305',
+          raised: '#0a0a0f',
+          overlay: '#111118',
         },
         charcoal: {
           DEFAULT: '#1a1a24',

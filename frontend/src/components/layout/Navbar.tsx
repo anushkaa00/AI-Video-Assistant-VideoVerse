@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Play, Sparkles } from 'lucide-react'
+import { Menu, X, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { Logo } from '@/components/ui/Logo'
 import { cn } from '@/lib/utils'
 
 const navLinks = [
   { label: 'Features', href: '#features' },
   { label: 'Workflow', href: '#workflow' },
-  { label: 'Pricing', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
 ]
 
@@ -34,15 +34,10 @@ export function Navbar() {
       >
         <a
           href="/"
-          className="flex items-center gap-2.5 cursor-pointer group"
-          aria-label="AI Video Assistant home"
+          className="cursor-pointer group transition-opacity duration-200 hover:opacity-90"
+          aria-label="VideoVerse home"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple shadow-glow-blue">
-            <Play className="h-4 w-4 fill-white text-white" aria-hidden="true" />
-          </div>
-          <span className="text-lg font-bold text-white group-hover:text-slate-200 transition-colors">
-            VidAI
-          </span>
+          <Logo size="sm" />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -57,13 +52,10 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <Button variant="ghost" size="sm">
-            Sign in
-          </Button>
+        <div className="hidden md:flex">
           <Button variant="primary" size="sm" magnetic>
-            <Sparkles className="h-4 w-4" aria-hidden="true" />
-            Start Free
+            Analyze Video
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Button>
         </div>
 
@@ -102,12 +94,10 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-3">
-                <Button variant="ghost" size="md" className="w-full">
-                  Sign in
-                </Button>
+              <div className="mt-3 border-t border-white/10 pt-3">
                 <Button variant="primary" size="md" magnetic className="w-full">
-                  Start Free
+                  Analyze Video
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
             </div>

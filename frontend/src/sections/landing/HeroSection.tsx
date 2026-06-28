@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, Play } from 'lucide-react'
+import { ArrowRight, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
 import { AnimatedGradient } from '@/components/ui/AnimatedGradient'
@@ -9,7 +9,7 @@ import { fadeInUp, staggerContainer } from '@/lib/motion'
 export function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden pt-28 pb-20 sm:pt-32 lg:pt-36">
-      <AnimatedGradient />
+      <AnimatedGradient variant="hero" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -21,7 +21,7 @@ export function HeroSection() {
           <motion.div variants={fadeInUp}>
             <Badge variant="gradient" className="mb-6">
               <Sparkles className="mr-1.5 h-3 w-3 inline" aria-hidden="true" />
-              AI-Powered Video Intelligence
+              Free AI Video Intelligence
             </Badge>
           </motion.div>
 
@@ -44,31 +44,12 @@ export function HeroSection() {
 
           <motion.div
             variants={fadeInUp}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="mt-10 flex justify-center"
           >
             <Button variant="primary" size="lg" magnetic>
-              Start Free Trial
+              Analyze Video
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Button>
-            <Button variant="secondary" size="lg" magnetic>
-              <Play className="h-5 w-5" aria-hidden="true" />
-              Watch Demo
-            </Button>
-          </motion.div>
-
-          <motion.div
-            variants={fadeInUp}
-            className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-slate-500"
-          >
-            <span>No credit card required</span>
-            <span className="hidden sm:inline" aria-hidden="true">
-              ·
-            </span>
-            <span>Free 14-day trial</span>
-            <span className="hidden sm:inline" aria-hidden="true">
-              ·
-            </span>
-            <span>Cancel anytime</span>
           </motion.div>
         </motion.div>
 

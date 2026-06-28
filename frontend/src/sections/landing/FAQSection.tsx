@@ -9,22 +9,22 @@ const faqs = [
   {
     question: 'What video formats do you support?',
     answer:
-      'We support all major video and audio formats including MP4, MOV, AVI, MKV, MP3, WAV, and more. You can also paste YouTube URLs directly for processing.',
+      'VideoVerse supports all major video and audio formats including MP4, MOV, AVI, MKV, MP3, WAV, and more. You can also paste YouTube URLs directly for processing.',
   },
   {
     question: 'How accurate is the transcription?',
     answer:
-      'Our Whisper-powered transcription achieves 98%+ accuracy for clear audio in English. Accuracy may vary with background noise, accents, or multiple speakers.',
+      'Our Whisper-powered transcription achieves high accuracy for clear audio. Results may vary with background noise, accents, or multiple speakers.',
   },
   {
     question: 'Is my video data secure?',
     answer:
-      'Yes. All uploads are encrypted in transit and at rest. We never use your content to train AI models. Enterprise plans include SSO and audit logs.',
+      'Yes. All uploads are encrypted in transit and at rest. We never use your content to train AI models without your consent.',
   },
   {
     question: 'Can I chat with multiple videos?',
     answer:
-      'Pro and Enterprise plans support multi-video knowledge bases. You can search and ask questions across your entire video library using semantic RAG search.',
+      'Yes. VideoVerse supports semantic search across your processed videos, letting you ask questions and retrieve context from your entire library.',
   },
   {
     question: 'What languages are supported?',
@@ -32,9 +32,9 @@ const faqs = [
       'Whisper supports 90+ languages for transcription. AI summaries and chat are currently optimized for English, with more languages coming soon.',
   },
   {
-    question: 'Can I cancel my subscription anytime?',
+    question: 'Is VideoVerse really free?',
     answer:
-      'Absolutely. There are no long-term contracts. Cancel anytime from your account settings and retain access until the end of your billing period.',
+      'Yes. VideoVerse is completely free to use. Upload videos, generate transcripts, summaries, and chat with your content at no cost.',
   },
 ]
 
@@ -53,7 +53,7 @@ export function FAQSection() {
           <SectionHeader
             badge="FAQ"
             title="Frequently asked questions"
-            description="Everything you need to know about VidAI. Can't find what you're looking for? Contact our support team."
+            description="Everything you need to know about VideoVerse. Can't find what you're looking for? Reach out to our team."
           />
         </motion.div>
 
@@ -70,7 +70,7 @@ export function FAQSection() {
             return (
               <div
                 key={faq.question}
-                className="glass rounded-2xl overflow-hidden transition-colors duration-200 hover:border-white/15"
+                className="glass rounded-2xl overflow-hidden transition-all duration-200 hover:border-white/15 hover:shadow-glow"
               >
                 <button
                   type="button"
