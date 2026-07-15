@@ -61,7 +61,7 @@ export function Navbar() {
           className="cursor-pointer group transition-opacity duration-200 hover:opacity-90"
           aria-label="VideoVerse home"
         >
-          <Logo size="sm" />
+          <Logo size="md" />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">

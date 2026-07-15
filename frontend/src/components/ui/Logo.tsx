@@ -7,9 +7,9 @@ interface LogoProps {
 }
 
 const sizes = {
-  sm: { img: 'h-8 w-8', text: 'text-base' },
-  md: { img: 'h-10 w-10', text: 'text-lg' },
-  lg: { img: 'h-12 w-12', text: 'text-xl' },
+  sm: { img: 'h-10 w-10', text: 'text-base' },
+  md: { img: 'h-16 w-16', text: 'text-lg' },
+  lg: { img: 'h-24 w-24', text: 'text-xl' },
 }
 
 export function Logo({ size = 'md', showText = true, className }: LogoProps) {
