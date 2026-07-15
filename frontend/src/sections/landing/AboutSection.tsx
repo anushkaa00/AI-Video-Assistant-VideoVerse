@@ -28,7 +28,7 @@ export function AboutSection() {
         >
           {[
             { value: '100%', label: 'Free to use' },
-            { value: '90+', label: 'Languages supported' },
+            { value: '2', label: 'Languages supported' },
             { value: 'AI', label: 'Powered by Whisper & RAG' },
           ].map((stat) => (
             <div
